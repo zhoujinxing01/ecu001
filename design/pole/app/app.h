@@ -337,7 +337,7 @@ void HollCheck_Logic(void);
 
 void JOJO_Procedure(void);
 void JOJO_Track(void);
-void JOJO_CAN(void);//qiaoqiao
+void JOJO_CAN(void);//qiao 2018-4
 
 #endif
 
