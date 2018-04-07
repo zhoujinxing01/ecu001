@@ -1,0 +1,59 @@
+;*******************************************************************************
+; Library       : EEPROM Emulation Library (T02)
+;
+; File Name     : $Source: eel_sample_linker_file.dr $
+; Lib. Version  : $RL78_EEL_LIB_VERSION_T02: V1.00 $
+; Mod. Revision : $Revision: 1.10 $
+; Mod. Date     : $Date: 2012/10/26 01:00:04JST $
+; Device(s)     : RL78/G13 (R5F100LE)
+; Description   : Linker sample file, please modify according to your device
+;******************************************************************************
+; DISCLAIMER
+; This software is supplied by Renesas Electronics Corporation and is only
+; intended for use with Renesas products. No other uses are authorized. This
+; software is owned by Renesas Electronics Corporation and is protected under
+; all applicable laws, including copyright laws.
+; THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+; THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+; LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+; AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+; TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+; ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+; FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+; ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+; BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+; Renesas reserves the right, without notice, to make changes to this software
+; and to discontinue the availability of this software. By using this software,
+; you agree to the additional terms and conditions found by accessing the
+; following link:
+; http://www.renesas.com/disclaimer
+;
+; Copyright (C) 2012 Renesas Electronics Corporation. All rights reserved.
+;*******************************************************************************
+
+
+;*******************************************************************************
+; Redefined default RAM segment
+;*******************************************************************************
+MEMORY RAM:(0FF700H, 00720H)
+MEMORY RAM_SADDR:(0FFE20H, 000C0H)
+
+;*******************************************************************************
+; EEL_CODE and FDL_CODE segments are located inside ROM
+;*******************************************************************************
+MERGE FDL_CODE:=ROM
+MERGE EEL_CODE:=ROM
+
+;*******************************************************************************
+; EEL_SDAT and FDL_SDAT segment is located inside saddr RAM
+;*******************************************************************************
+MERGE FDL_SDAT:=RAM_SADDR
+MERGE EEL_SDAT:=RAM_SADDR
+
+
+;*******************************************************************************
+; EEL_CNST and FDL_CNST segments are located inside ROM
+;*******************************************************************************
+MERGE FDL_CNST:=ROM
+MERGE EEL_CNST:=ROM
+
