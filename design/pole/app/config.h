@@ -124,7 +124,7 @@ static const uint16_t  PWMClose[16][2]={
 #define SpringUp_VAL		1000
 
 #define zjx01 10
-#define zjx02 15
+#define zjx02 15//hello github
 
 
 #endif
